@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fraud Detection App 2025</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <button id="settings-btn" class="settings-btn">Settings</button>
+    <div class="settings-panel" id="settings-panel">
+      <h3>Theme Settings</h3>
+      <label for="theme-select">Theme:</label>
+      <select id="theme-select">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+      <button id="save-settings">Apply</button>
+    </div>
+    <div class="tabs">
+      <button onclick="openTab('admin')">Admin</button>
+      <button onclick="openTab('user')">User</button>
+    </div>
+
+    <!-- Admin Tab -->
+    <div id="admin" class="tab-content">
+      <h2>Admin Login</h2>
+      <input type="text" id="admin-username" placeholder="Username" />
+      <input type="password" id="admin-password" placeholder="Password" />
+      <button id="admin-login-btn" onclick="adminLogin()">Login</button>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-section" class="tab-content" style="display: none">
+      <h2>Add New App</h2>
+      <input type="text" id="app-name" placeholder="App Name" />
+      <input type="text" id="app-type" placeholder="App Type" />
+      <input type="text" id="app-description" placeholder="App Description" />
+      <input type="text" id="app-developer" placeholder="App Developer" />
+      <button onclick="addApp()">Add App</button>
+      <p id="add-app-status"></p>
+
+      <h2>Added Apps</h2>
+      <ul id="added-apps-list"></ul>
+
+      <!-- SCRAPE SECTION - UPDATED -->
+      <h2>Scrape and Save Reviews</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <input type="text" id="scrape-app-id" placeholder="App ID (e.g., com.whatsapp)" />
+        <input type="text" id="scrape-app-name" placeholder="App Name (e.g., WhatsApp)" />
+        <select id="scrape-lang">
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="ar">Arabic</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+        </select>
+        <select id="scrape-country">
+          <option value="us">USA</option>
+          <option value="in">India</option>
+          <option value="gb">UK</option>
+          <option value="ae">UAE</option>
+          <option value="br">Brazil</option>
+        </select>
+      </div>
+      <button onclick="scrapeAndSave()" style="margin-top: 10px;">Scrape & Save</button>
+      <p id="status-result"></p>
+      <div id="review-list"></div>
+      <!-- END SCRAPE SECTION -->
+    </div>
+
+    <!-- User Dashboard -->
+    <div id="user" class="tab-content" style="display: none">
+      <h2>User Dashboard</h2>
+
+      <!-- Check Fraud Status -->
+      <div>
+        <h3>Check App Fraud Status</h3>
+        <input type="text" id="check-app-name" placeholder="Enter App Name" />
+        <button id="check-status-btn" onclick="checkStatus()">Check Status</button>
+        <p id="user-status-result"></p>
+        <canvas id="fraud-chart" width="200" height="200" style="max-width: 400px; margin-top: 20px;"></canvas>
+      </div>
+
+      <!-- Submit Feedback -->
+      <div>
+        <h3>Submit Feedback</h3>
+        <textarea id="feedback-text" placeholder="Enter your feedback"></textarea>
+        <button onclick="submitFeedback()">Submit</button>
+        <p id="feedback-status"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
