@@ -1,6 +1,5 @@
 # Detecting Fraud Apps using Sentiment Analysis
 
-## Project Overview
 This project uses Machine Learning and NLP techniques to detect fraudulent mobile applications based on user reviews.
 
 ## Technologies Used
@@ -23,17 +22,30 @@ This project uses Machine Learning and NLP techniques to detect fraudulent mobil
 
 ## How to Run the Project
 1. Clone the repository
-2. Run:
+   ```bash
+   git clone <your-repo-url>
+   cd fraud-app-detection
+   ```
+
+2. Install dependencies
+   ```bash
    npm install
-3. Start the server:
+   ```
+
+3. Start the server
+   ```bash
    node server.js
-4. Open in browser:
+   ```
+
+4. Open in browser
+   ```
    http://localhost:3000
+   ```
 
 ## Project Structure
-- server.js – Backend server
-- ml_model.py – ML model logic
-- fraud_model.pkl – Trained model
-- vectorizer.pkl – Text vectorizer
-- index.html – Frontend
-- styles.css – Styling
+- `server.js`               → Backend server (Node.js + Express)
+- `ml_model.py`             → Python script for ML model training/prediction
+- `fraud_model.pkl`         → Trained ML classification model
+- `vectorizer.pkl`          → Fitted TF-IDF vectorizer for text
+- `index.html`              → Main frontend page
+- `styles.css`              → Styling for the web interface
